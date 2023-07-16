@@ -1,17 +1,18 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import DefaultLayout from '../components/DefaultLayout.vue'
+import DefaultLayout from "../components/DefaultLayout.vue";
 import MealsByName from "../views/MealsByName.vue";
 import MealsByLetter from "../views/MealsByLetter.vue";
 import MealsByIngreadient from "../views/MealsByIngreadient.vue";
-import GuestLayout from "../components/GuestLayout.vue"
-import MealDetails from "../views/MealDetails.vue"
-import ingreadients from "../views/ingreadients.vue"
+import GuestLayout from "../components/GuestLayout.vue";
+import MealDetails from "../views/MealDetails.vue";
+import ingreadients from "../views/ingreadients.vue";
+
 const routes = [
   {
-    path:'/',
-    component:DefaultLayout,
-    children:[
+    path: "/",
+    component: DefaultLayout,
+    children: [
       {
         path: "/",
         name: "home",
@@ -39,21 +40,20 @@ const routes = [
       },
 
       {
-        path:'/meal/:id',
-        name:'mealDetails',
-        component:MealDetails
-      }
-    ]
+        path: "/meal/:id",
+        name: "mealDetails",
+        component: MealDetails,
+      },
+    ],
   },
   {
-    path:'/guest',
-    component:GuestLayout,
-  }
-   
+    path: "/guest",
+    component: GuestLayout,
+  },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
