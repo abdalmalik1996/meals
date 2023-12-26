@@ -4,11 +4,9 @@
   </div>
   <div v-if="!meals.length" class="flex justify-center text-gray-600 p-8">
     There are no meals
-  </div>
-  
+  </div>  
 </template>
 <script setup>
-
 import MealItem from '../components/MealItem.vue'
 const {meals} = defineProps({
     meals:{
